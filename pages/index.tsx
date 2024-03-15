@@ -7,6 +7,7 @@ import { GrNotification } from "react-icons/gr";
 import { FaRegEnvelope, FaRegUser } from "react-icons/fa";
 import { CgMoreO } from "react-icons/cg";
 import FeedCard from "@/components/FeedCard";
+import { RiFileListLine } from "react-icons/ri";
 
 interface TwitterSideBarButton {
   title: string;
@@ -33,6 +34,10 @@ const sideBarMenuItems: TwitterSideBarButton[] = [
   {
     title: "Grok",
     icon: <BsSlashSquare />,
+  },
+  {
+    title: "List",
+    icon: <RiFileListLine />,
   },
   {
     title: "Premium",
@@ -75,7 +80,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="col-span-6 border-l-[1px] border-r-[1px] border border-gray-800">
+        <div className="col-span-6 border-l-[1px] border-r-[1px] border-gray-800 h-screen overflow-scroll">
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
           <FeedCard />
           <FeedCard />
           <FeedCard />
