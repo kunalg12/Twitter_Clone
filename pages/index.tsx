@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { BsSlashSquare, BsTwitterX } from "react-icons/bs";
 import React from "react";
 import { FiSearch } from "react-icons/fi";
@@ -8,6 +7,7 @@ import { FaRegEnvelope, FaRegUser } from "react-icons/fa";
 import { CgMoreO } from "react-icons/cg";
 import FeedCard from "@/components/FeedCard";
 import { RiFileListLine } from "react-icons/ri";
+import { GoogleLogin } from "@react-oauth/google";
 
 interface TwitterSideBarButton {
   title: string;
@@ -65,7 +65,7 @@ export default function Home() {
             <ul>
               {sideBarMenuItems.map((item) => (
                 <li
-                  className="flex justify-start items-center hover:bg-gray-800 rounded-full px-4 py-2 w-fit gap-4"
+                  className="flex justify-start items-center hover:bg-gray-800 rounded-full px-4 py-3 w-fit gap-4"
                   key={item.title}
                 >
                   <span>{item.icon}</span>
@@ -92,7 +92,15 @@ export default function Home() {
           <FeedCard />
           <FeedCard />
         </div>
-        <div className="col-span-3"></div>
+        <div className="col-span-3 p-5">
+          <div className="p-5 bg-slate-700 rounded-lg">
+            <GoogleLogin
+              onSuccess={(credentialResponse) =>
+                console.log(credentialResponse)
+              }
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
