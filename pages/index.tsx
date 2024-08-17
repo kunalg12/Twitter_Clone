@@ -84,8 +84,7 @@ export default function Home() {
           <FeedCard />
           <FeedCard />
           <FeedCard />
-          <FeedCard />
-          <FeedCard />
+          
          
          
         </div>
