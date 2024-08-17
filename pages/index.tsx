@@ -86,7 +86,7 @@ export default function Home() {
           <FeedCard />
           <FeedCard />
           <FeedCard />
-          <FeedCard />
+         
          
         </div>
         <div className="col-span-3 p-5">
