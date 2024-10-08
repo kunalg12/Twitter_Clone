@@ -88,11 +88,12 @@ export default function Home() {
           <FeedCard />
         </div>
         <div className="col-span-3 p-5">
-          <div className="p-5 bg-slate-700 rounded-lg">
+          <div className="p-5 bg-slate-700 rounded-lg"> New to X?
             <GoogleLogin
               onSuccess={(credentialResponse) =>
                 console.log(credentialResponse)
               }
+              
             />
           </div>
         </div>
