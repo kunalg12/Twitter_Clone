@@ -1,5 +1,5 @@
 import { BsSlashSquare, BsTwitterX } from "react-icons/bs";
-import React from "react";
+import React, { useCallback } from "react";
 import { FiSearch } from "react-icons/fi";
 import { GoHomeFill } from "react-icons/go";
 import { GrNotification } from "react-icons/gr";
@@ -7,7 +7,7 @@ import { FaRegEnvelope, FaRegUser } from "react-icons/fa";
 import { CgMoreO } from "react-icons/cg";
 import FeedCard from "@/components/FeedCard";
 import { RiFileListLine } from "react-icons/ri";
-import { GoogleLogin } from "@react-oauth/google";
+import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 
 interface TwitterSideBarButton {
   title: string;
@@ -54,6 +54,9 @@ const sideBarMenuItems: TwitterSideBarButton[] = [
 ];
 
 export default function Home() {
+
+  // const handleLoginWithGoogle = useCallback((cred: CredentialResponse) => {
+  // }, [])
   return (
     <div>
       <div className="grid grid-cols-12 h-screen w-screen px-36 cursor-pointer">
@@ -90,8 +93,8 @@ export default function Home() {
         <div className="col-span-3 p-5">
           <div className="p-5 bg-slate-700 rounded-lg"> New to X?
             <GoogleLogin
-              onSuccess={(credentialResponse) =>
-                console.log(credentialResponse)
+              onSuccess={(CredentialResponse) =>
+                console.log(CredentialResponse)
               }
               
             />
